@@ -16,6 +16,7 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter {
 		http
 			.authorizeRequests(a -> a
 				.antMatchers("/", "/error").permitAll()
+				.antMatchers("/books/*").permitAll()
 				.anyRequest().authenticated()
 			)
 			.exceptionHandling(e -> e
